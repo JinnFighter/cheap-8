@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F9E6EC29-A9AA-406C-AED8-86A35B806AF6}</ProjectGuid>
+    <ProjectGuid>{37FACC23-11E8-4900-9220-07FE479D1ADF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Emulator</RootNamespace>
-    <AssemblyName>Emulator</AssemblyName>
+    <RootNamespace>Main</RootNamespace>
+    <AssemblyName>Main</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -34,17 +34,15 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressStack.cs" />
-    <Compile Include="Memory.cs" />
+    <ProjectReference Include="..\Emulator\Emulator.csproj">
+      <Project>{f9e6ec29-a9aa-406c-aed8-86a35b806af6}</Project>
+      <Name>Emulator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Program.cs" />
-    <Compile Include="RegistersContainer.cs" />
-    <Compile Include="TimerRegisters.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
