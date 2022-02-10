@@ -2,8 +2,10 @@
 {
     public class RegistersContainer
     {
-        private byte[] _vRegisters;
+        private readonly byte[] _vRegisters;
         private ushort _iRegister;
+        private ushort _programCounter;
+
 
         public RegistersContainer()
         {
@@ -21,5 +23,7 @@
         public void WriteVFRegister(byte info) => _vRegisters[15] = info;
 
         public void WriteIRegister(ushort info) => _iRegister = info;
+
+        public void WriteProgramCounter(ushort count) => _programCounter = count;
     }
 }
