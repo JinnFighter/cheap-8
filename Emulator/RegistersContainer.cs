@@ -1,10 +1,10 @@
 ﻿namespace Emulator
 {
-    public class RegistersContainer
+    internal class RegistersContainer
     {
         private readonly byte[] _vRegisters;
         private ushort _iRegister;
-        private ushort _programCounter;
+        public ushort ProgramCounter { get; set; }
 
 
         public RegistersContainer()
@@ -23,7 +23,5 @@
         public void WriteVFRegister(byte info) => _vRegisters[15] = info;
 
         public void WriteIRegister(ushort info) => _iRegister = info;
-
-        public void WriteProgramCounter(ushort count) => _programCounter = count;
     }
 }
