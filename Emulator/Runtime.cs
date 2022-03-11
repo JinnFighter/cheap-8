@@ -29,11 +29,14 @@ namespace Emulator
                 ExecuteInstruction();
                 _isActive = false;
             }
+
+            Console.ReadKey();
         }
 
         private void FetchInstruction()
         {
             Console.WriteLine("Fetch instruction");
+            _registersContainter.ProgramCounter += 2;
         }
 
         private void DecodeInstruction()
