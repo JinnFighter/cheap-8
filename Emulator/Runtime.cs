@@ -5,11 +5,18 @@ namespace Emulator
     public class Runtime
     {
         private readonly RegistersContainer _registersContainter;
+        private readonly Memory _memory;
+        private readonly AddressStack _addressStack;
+        private readonly TimerRegisters _timerRegisters;
+
         private bool _isActive;
 
         public Runtime()
         {
             _registersContainter = new RegistersContainer();
+            _memory = new Memory();
+            _addressStack = new AddressStack();
+            _timerRegisters = new TimerRegisters();
         }
 
         public void Run()
