@@ -2,7 +2,7 @@
 
 namespace Emulator
 {
-    public class AddressStack
+    internal class AddressStack
     {
         private readonly Stack<ushort> _addresses;
 

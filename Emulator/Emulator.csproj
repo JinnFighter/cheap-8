@@ -41,6 +41,7 @@
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RegistersContainer.cs" />
+    <Compile Include="Runtime.cs" />
     <Compile Include="TimerRegisters.cs" />
   </ItemGroup>
   <ItemGroup>

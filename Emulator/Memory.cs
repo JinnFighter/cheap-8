@@ -1,6 +1,6 @@
 ﻿namespace Emulator
 {
-    public class Memory
+    internal class Memory
     {
         private readonly byte[] _memoryBytes;
         private readonly int _internalMemorySize;
