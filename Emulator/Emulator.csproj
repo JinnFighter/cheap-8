@@ -41,6 +41,7 @@
     <Compile Include="Display.cs" />
     <Compile Include="Instructions\ClearScreenInstruction.cs" />
     <Compile Include="Instructions\IInstruction.cs" />
+    <Compile Include="Instructions\JumpInstruction.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RegistersContainer.cs" />
