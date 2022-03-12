@@ -11,7 +11,6 @@ namespace Emulator
 
         private bool _isActive;
 
-        private const ushort FirstNibbleMask = 0xF000;
         private const ushort AMask = 0x0FFF;
 
         public Runtime()
@@ -41,6 +40,7 @@ namespace Emulator
             Console.WriteLine("Fetch instruction");
             var oldCounter = _memory.GetProgramCounter();
             _memory.IncreaseCounterAddress();
+            return 0xA2F0;
             return _memory.GetInstruction(oldCounter);
         }
 
@@ -48,7 +48,8 @@ namespace Emulator
         {
             Console.WriteLine(instructionBytes);
             Console.WriteLine("Decode instruction");
-            ushort nibble = (ushort)(instructionBytes & FirstNibbleMask >> 4);
+            var nibble = (instructionBytes >> 12);
+            Console.WriteLine(nibble);
             IInstruction instruction;
             switch(nibble)
             {
