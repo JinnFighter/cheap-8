@@ -45,6 +45,7 @@
     <Compile Include="Instructions\PopSubroutineInstruction.cs" />
     <Compile Include="Instructions\PushSubroutineInstruction.cs" />
     <Compile Include="Instructions\SkipMultipleEqualInstruction.cs" />
+    <Compile Include="Instructions\SkipMultipleNotEqualInstruction.cs" />
     <Compile Include="Instructions\SkipSingleEqualInstruction.cs" />
     <Compile Include="Instructions\SkipSingleNotEqualInstruction.cs" />
     <Compile Include="Memory.cs" />
