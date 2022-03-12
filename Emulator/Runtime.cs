@@ -40,7 +40,7 @@ namespace Emulator
             Console.WriteLine("Fetch instruction");
             var oldCounter = _memory.GetProgramCounter();
             _memory.IncreaseCounterAddress();
-            return 0x6A10;
+            return 0xDABC;
             return _memory.GetInstruction(oldCounter);
         }
 
@@ -74,6 +74,9 @@ namespace Emulator
                     break;
                 case 0xA:
                     instruction = new SetIRegisterInstruction((ushort)(instructionBytes & AMask));
+                    break;
+                case 0xD:
+                    instruction = new DisplayInstruction(_display, (ushort)((instructionBytes & 0x0f00) >> 8), (ushort)((instructionBytes & 0x00f0) >> 4), (ushort)((instructionBytes & 0x000f)));
                     break;
                 default:
                     instruction = new NullInstruction();
