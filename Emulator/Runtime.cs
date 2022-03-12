@@ -26,7 +26,8 @@ namespace Emulator
             _isActive = true;
             while(_isActive)
             {
-                FetchInstruction();
+                var instruction = FetchInstruction();
+                Console.WriteLine(instruction);
                 DecodeInstruction();
                 ExecuteInstruction();
                 _isActive = false;
@@ -35,10 +36,11 @@ namespace Emulator
             Console.ReadKey();
         }
 
-        private void FetchInstruction()
+        private ushort FetchInstruction()
         {
             Console.WriteLine("Fetch instruction");
             _registersContainter.IncreaseCounterAddress();
+            return _memory.GetInstruction(_registersContainter.GetProgramCounter());
         }
 
         private void DecodeInstruction()

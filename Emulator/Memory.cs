@@ -13,6 +13,8 @@
 
         public byte GetIndex(int index) => _memoryBytes[index];
 
+        public ushort GetInstruction(int index) => (ushort)(_memoryBytes[index] + _memoryBytes[index + 1]);
+
         public void WriteInternal(int index, byte info)
         {
             if(index >= 0 && index < _internalMemorySize)
