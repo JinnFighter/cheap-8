@@ -3,6 +3,7 @@
     internal class RegistersContainer
     {
         private readonly byte[] _vRegisters;
+        public byte[] Vs { get; }
         private ushort _iRegister;
         public ushort ProgramCounter { get; set; }
 
@@ -10,6 +11,7 @@
         public RegistersContainer()
         {
             _vRegisters = new byte[16];
+            Vs = new byte[16];
         }
 
         public void WriteRegularRegister(int index, byte info)

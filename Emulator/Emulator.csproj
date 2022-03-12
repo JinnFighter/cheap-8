@@ -44,6 +44,7 @@
     <Compile Include="Instructions\JumpInstruction.cs" />
     <Compile Include="Instructions\PopSubroutineInstruction.cs" />
     <Compile Include="Instructions\PushSubroutineInstruction.cs" />
+    <Compile Include="Instructions\SkipSingleEqualInstruction.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RegistersContainer.cs" />
