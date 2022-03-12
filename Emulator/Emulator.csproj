@@ -39,6 +39,19 @@
   <ItemGroup>
     <Compile Include="AddressStack.cs" />
     <Compile Include="Display.cs" />
+    <Compile Include="Instructions\AddToRegisterInstruction.cs" />
+    <Compile Include="Instructions\ClearScreenInstruction.cs" />
+    <Compile Include="Instructions\DisplayInstruction.cs" />
+    <Compile Include="Instructions\IInstruction.cs" />
+    <Compile Include="Instructions\JumpInstruction.cs" />
+    <Compile Include="Instructions\PopSubroutineInstruction.cs" />
+    <Compile Include="Instructions\PushSubroutineInstruction.cs" />
+    <Compile Include="Instructions\SetIRegisterInstruction.cs" />
+    <Compile Include="Instructions\SetRegisterInstruction.cs" />
+    <Compile Include="Instructions\SkipMultipleEqualInstruction.cs" />
+    <Compile Include="Instructions\SkipMultipleNotEqualInstruction.cs" />
+    <Compile Include="Instructions\SkipSingleEqualInstruction.cs" />
+    <Compile Include="Instructions\SkipSingleNotEqualInstruction.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RegistersContainer.cs" />
