@@ -6,7 +6,8 @@
         public byte[] Vs { get; }
         private ushort _iRegister;
         private ushort _programCounter;
-
+        public byte DelayTimer { get; set; }
+        public byte SoundTimer { get; set; }
 
         public RegistersContainer()
         {
