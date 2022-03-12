@@ -42,6 +42,7 @@
     <Compile Include="Instructions\ClearScreenInstruction.cs" />
     <Compile Include="Instructions\IInstruction.cs" />
     <Compile Include="Instructions\JumpInstruction.cs" />
+    <Compile Include="Instructions\PushSubroutineInstruction.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RegistersContainer.cs" />
