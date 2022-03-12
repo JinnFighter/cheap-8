@@ -4,17 +4,14 @@ namespace Emulator.Instructions
 {
     internal class DisplayInstruction : IInstruction
     {
-        private readonly RegistersContainer _registersContainer;
         private readonly Display _display;
 
-
-        public DisplayInstruction(RegistersContainer registersContainer, Display display)
+        public DisplayInstruction(Display display)
         {
-            _registersContainer = registersContainer;
             _display = display;
         }
 
-        public void Execute()
+        public void Execute(Memory memory)
         {
             Console.WriteLine("Draw!");
         }

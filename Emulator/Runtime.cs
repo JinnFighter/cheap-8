@@ -5,7 +5,6 @@ namespace Emulator
 {
     public class Runtime
     {
-        private readonly RegistersContainer _registersContainter;
         private readonly Memory _memory;
         private readonly AddressStack _addressStack;
         private readonly Display _display;
@@ -17,7 +16,6 @@ namespace Emulator
 
         public Runtime()
         {
-            _registersContainter = new RegistersContainer();
             _memory = new Memory();
             _addressStack = new AddressStack();
             _display = new Display();
@@ -31,7 +29,7 @@ namespace Emulator
                 var instructionBytes = FetchInstruction();
                 var instruction = DecodeInstruction(instructionBytes);
                 Console.WriteLine("Executing Instruction");
-                instruction.Execute();
+                instruction.Execute(_memory);
                 _isActive = false;
             }
 
@@ -41,8 +39,8 @@ namespace Emulator
         private ushort FetchInstruction()
         {
             Console.WriteLine("Fetch instruction");
-            var oldCounter = _registersContainter.GetProgramCounter();
-            _registersContainter.IncreaseCounterAddress();
+            var oldCounter = _memory.GetProgramCounter();
+            _memory.IncreaseCounterAddress();
             return _memory.GetInstruction(oldCounter);
         }
 
@@ -55,7 +53,7 @@ namespace Emulator
             switch(nibble)
             {
                 case 0xA:
-                    instruction = new SetIRegisterInstruction(_registersContainter, (ushort)(instructionBytes & AMask));
+                    instruction = new SetIRegisterInstruction((ushort)(instructionBytes & AMask));
                     break;
                 default:
                     instruction = new NullInstruction();

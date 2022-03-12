@@ -3,17 +3,15 @@
     internal class PopSubroutineInstruction : IInstruction
     {
         private readonly AddressStack _addressStack;
-        private readonly RegistersContainer _registersContainer;
 
-        public PopSubroutineInstruction(AddressStack addressStack, RegistersContainer registersContainer)
+        public PopSubroutineInstruction(AddressStack addressStack)
         {
             _addressStack = addressStack;
-            _registersContainer = registersContainer;
         }
 
-        public void Execute()
+        public void Execute(Memory memory)
         {
-            _registersContainer.SetProgramCounter(_addressStack.PopAddress());
+            memory.SetProgramCounter(_addressStack.PopAddress());
         }
     }
 }

@@ -55,7 +55,6 @@
     <Compile Include="Instructions\SkipSingleNotEqualInstruction.cs" />
     <Compile Include="Memory.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="RegistersContainer.cs" />
     <Compile Include="Runtime.cs" />
   </ItemGroup>
   <ItemGroup>

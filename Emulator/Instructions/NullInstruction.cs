@@ -4,7 +4,7 @@ namespace Emulator.Instructions
 {
     internal class NullInstruction : IInstruction
     {
-        public void Execute()
+        public void Execute(Memory memory)
         {
             Console.WriteLine("Null Instruction Executed");
         }

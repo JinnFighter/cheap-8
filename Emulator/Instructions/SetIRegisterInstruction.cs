@@ -2,19 +2,16 @@
 {
     internal class SetIRegisterInstruction : IInstruction
     {
-        private readonly RegistersContainer _registersContainer;
         private readonly ushort _registerValue;
 
-        public SetIRegisterInstruction(RegistersContainer registersContainer, ushort registerValue)
+        public SetIRegisterInstruction(ushort registerValue)
         {
-            _registersContainer = registersContainer;
             _registerValue = registerValue;
         }
 
-
-        public void Execute()
+        public void Execute(Memory memory)
         {
-            _registersContainer.WriteIRegister(_registerValue);
+            memory.WriteIRegister(_registerValue);
         }
     }
 }
