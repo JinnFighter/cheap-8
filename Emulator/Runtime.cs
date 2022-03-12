@@ -53,6 +53,16 @@ namespace Emulator
             IInstruction instruction;
             switch(nibble)
             {
+                case 0x0:
+                    if((ushort)(instructionBytes & AMask) == 0x0E0)
+                    {
+                        instruction = new ClearScreenInstruction(_display);
+                    }
+                    else
+                    {
+                        instruction = new NullInstruction();
+                    }
+                    break;
                 case 0xA:
                     instruction = new SetIRegisterInstruction((ushort)(instructionBytes & AMask));
                     break;
