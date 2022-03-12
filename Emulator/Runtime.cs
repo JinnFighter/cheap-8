@@ -69,6 +69,9 @@ namespace Emulator
                 case 0x6:
                     instruction = new SetRegisterInstruction((ushort)((instructionBytes & 0x0f00) >> 8), (byte)((instructionBytes & 0x00FF)));
                     break;
+                case 0x7:
+                    instruction = new AddToRegisterInstruction((ushort)((instructionBytes & 0x0f00) >> 8), (byte)((instructionBytes & 0x00FF)));
+                    break;
                 case 0xA:
                     instruction = new SetIRegisterInstruction((ushort)(instructionBytes & AMask));
                     break;
