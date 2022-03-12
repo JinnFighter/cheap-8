@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Emulator.Instructions;
+using System;
 
 namespace Emulator
 {
@@ -26,10 +27,10 @@ namespace Emulator
             _isActive = true;
             while(_isActive)
             {
-                var instruction = FetchInstruction();
-                Console.WriteLine(instruction);
-                DecodeInstruction();
-                ExecuteInstruction();
+                var instructionBytes = FetchInstruction();
+                var instruction = DecodeInstruction(instructionBytes);
+                Console.WriteLine("Executing Instruction");
+                instruction.Execute();
                 _isActive = false;
             }
 
@@ -44,14 +45,11 @@ namespace Emulator
             return _memory.GetInstruction(oldCounter);
         }
 
-        private void DecodeInstruction()
+        private IInstruction DecodeInstruction(ushort instructionBytes)
         {
+            Console.WriteLine(instructionBytes);
             Console.WriteLine("Decode instruction");
-        }
-
-        private void ExecuteInstruction()
-        {
-            Console.WriteLine("Execute instruction");
+            return new NullInstruction();
         }
     }
 }

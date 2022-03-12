@@ -44,6 +44,7 @@
     <Compile Include="Instructions\DisplayInstruction.cs" />
     <Compile Include="Instructions\IInstruction.cs" />
     <Compile Include="Instructions\JumpInstruction.cs" />
+    <Compile Include="Instructions\NullInstruction.cs" />
     <Compile Include="Instructions\PopSubroutineInstruction.cs" />
     <Compile Include="Instructions\PushSubroutineInstruction.cs" />
     <Compile Include="Instructions\SetIRegisterInstruction.cs" />
