@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="AddressStack.cs" />
     <Compile Include="Display.cs" />
+    <Compile Include="Instructions\AddToRegisterInstruction.cs" />
     <Compile Include="Instructions\ClearScreenInstruction.cs" />
     <Compile Include="Instructions\IInstruction.cs" />
     <Compile Include="Instructions\JumpInstruction.cs" />
