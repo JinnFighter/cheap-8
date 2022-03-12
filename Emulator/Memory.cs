@@ -13,7 +13,7 @@
 
         public byte GetIndex(int index) => _memoryBytes[index];
 
-        public ushort GetInstruction(int index) => (ushort)(_memoryBytes[index] + _memoryBytes[index + 1]);
+        public ushort GetInstruction(int index) => (ushort)(_memoryBytes[index] << 8 | _memoryBytes[index + 1]);
 
         public void WriteInternal(int index, byte info)
         {
