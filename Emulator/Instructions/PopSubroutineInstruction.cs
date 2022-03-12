@@ -13,8 +13,7 @@
 
         public void Execute()
         {
-            _addressStack.PushAddress(_registersContainer.ProgramCounter);
-            _registersContainer.ProgramCounter = _addressStack.PopAddress();
+            _registersContainer.SetProgramCounter(_addressStack.PopAddress());
         }
     }
 }

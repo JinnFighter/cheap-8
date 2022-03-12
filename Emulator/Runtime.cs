@@ -38,7 +38,7 @@ namespace Emulator
         private void FetchInstruction()
         {
             Console.WriteLine("Fetch instruction");
-            _registersContainter.ProgramCounter += 2;
+            _registersContainter.IncreaseCounterAddress();
         }
 
         private void DecodeInstruction()

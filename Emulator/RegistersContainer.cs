@@ -5,7 +5,7 @@
         private readonly byte[] _vRegisters;
         public byte[] Vs { get; }
         private ushort _iRegister;
-        public ushort ProgramCounter { get; set; }
+        private ushort _programCounter;
 
 
         public RegistersContainer()
@@ -25,5 +25,11 @@
         public void WriteVFRegister(byte info) => _vRegisters[15] = info;
 
         public void WriteIRegister(ushort info) => _iRegister = info;
+
+        public ushort GetProgramCounter() => _programCounter;
+
+        public void SetProgramCounter(ushort address) => _programCounter = address;
+
+        public void IncreaseCounterAddress() => _programCounter += 2;
     }
 }

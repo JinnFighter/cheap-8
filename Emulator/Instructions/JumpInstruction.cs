@@ -13,7 +13,7 @@
 
         public void Execute()
         {
-            _registers.ProgramCounter = _opcode;
+            _registers.SetProgramCounter(_opcode);
         }
     }
 }

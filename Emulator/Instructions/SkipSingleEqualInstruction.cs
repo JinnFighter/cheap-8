@@ -17,7 +17,7 @@
         {
            if(_container.Vs[_index] == _opcode)
            {
-                _container.ProgramCounter += 2;
+                _container.IncreaseCounterAddress();
            }
         }
     }

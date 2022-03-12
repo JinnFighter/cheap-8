@@ -15,8 +15,8 @@
 
         public void Execute()
         {
-            _addressStack.PushAddress(_registersContainer.ProgramCounter);
-            _registersContainer.ProgramCounter = _opcode;
+            _addressStack.PushAddress(_registersContainer.GetProgramCounter());
+            _registersContainer.SetProgramCounter(_opcode);
         }
     }
 }
