@@ -63,6 +63,9 @@ namespace Emulator
                         instruction = new NullInstruction();
                     }
                     break;
+                case 0x1:
+                    instruction = new JumpInstruction((ushort)(instructionBytes & AMask));
+                    break;
                 case 0xA:
                     instruction = new SetIRegisterInstruction((ushort)(instructionBytes & AMask));
                     break;
