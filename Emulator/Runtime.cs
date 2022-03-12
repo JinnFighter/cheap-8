@@ -13,6 +13,9 @@ namespace Emulator
 
         private bool _isActive;
 
+        private const ushort FirstNibbleMask = 0xF000;
+        private const ushort AMask = 0x0FFF;
+
         public Runtime()
         {
             _registersContainter = new RegistersContainer();
@@ -49,7 +52,18 @@ namespace Emulator
         {
             Console.WriteLine(instructionBytes);
             Console.WriteLine("Decode instruction");
-            return new NullInstruction();
+            ushort nibble = (ushort)(instructionBytes & FirstNibbleMask >> 4);
+            IInstruction instruction;
+            switch(nibble)
+            {
+                case 0xA:
+                    instruction = new SetIRegisterInstruction(_registersContainter, (ushort)(instructionBytes & AMask));
+                    break;
+                default:
+                    instruction = new NullInstruction();
+                    break;
+            }
+            return instruction;
         }
     }
 }
