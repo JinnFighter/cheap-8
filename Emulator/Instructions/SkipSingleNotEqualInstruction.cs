@@ -1,6 +1,6 @@
 ﻿namespace Emulator.Instructions
 {
-    internal class SkipSingleNotEqualInstruction
+    internal class SkipSingleNotEqualInstruction : IInstruction
     {
         private readonly RegistersContainer _container;
         private readonly byte _opcode;

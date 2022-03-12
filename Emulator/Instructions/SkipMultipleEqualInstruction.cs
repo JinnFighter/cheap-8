@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Emulator.Instructions
+﻿namespace Emulator.Instructions
 {
-    internal class SkipMultipleEqualInstruction
+    internal class SkipMultipleEqualInstruction : IInstruction
     {
         private readonly RegistersContainer _container;
         private readonly byte _opcode;
