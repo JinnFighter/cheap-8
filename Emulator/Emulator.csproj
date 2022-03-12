@@ -45,6 +45,7 @@
     <Compile Include="Instructions\JumpInstruction.cs" />
     <Compile Include="Instructions\PopSubroutineInstruction.cs" />
     <Compile Include="Instructions\PushSubroutineInstruction.cs" />
+    <Compile Include="Instructions\SetIRegisterInstruction.cs" />
     <Compile Include="Instructions\SetRegisterInstruction.cs" />
     <Compile Include="Instructions\SkipMultipleEqualInstruction.cs" />
     <Compile Include="Instructions\SkipMultipleNotEqualInstruction.cs" />
