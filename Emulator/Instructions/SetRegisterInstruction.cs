@@ -2,21 +2,18 @@
 {
     internal class SetRegisterInstruction : IInstruction
     {
-        private readonly RegistersContainer _registersContainer;
         private readonly int _index;
         private readonly byte _registerValue;
 
-        public SetRegisterInstruction(RegistersContainer registersContainer, int index, byte registerValue)
+        public SetRegisterInstruction(int index, byte registerValue)
         {
-            _registersContainer = registersContainer;
             _index = index;
             _registerValue = registerValue;
         }
 
-
-        public void Execute()
+        public void Execute(Memory memory)
         {
-            _registersContainer.Vs[_index] = _registerValue;
+            memory.Vs[_index] = _registerValue;
         }
     }
 }

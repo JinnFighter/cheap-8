@@ -2,18 +2,16 @@
 {
     internal class JumpInstruction : IInstruction
     {
-        private readonly RegistersContainer _registers;
         private readonly ushort _opcode;
 
-        public JumpInstruction(RegistersContainer registersContainer, ushort opcode)
+        public JumpInstruction(ushort opcode)
         {
-            _registers = registersContainer;
             _opcode = opcode;
         }
 
-        public void Execute()
+        public void Execute(Memory memory)
         {
-            _registers.SetProgramCounter(_opcode);
+            memory.SetProgramCounter(_opcode);
         }
     }
 }

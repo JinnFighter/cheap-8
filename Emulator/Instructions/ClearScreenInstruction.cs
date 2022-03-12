@@ -9,7 +9,7 @@
             _display = display;
         }
 
-        public void Execute()
+        public void Execute(Memory memory)
         {
             for(var i = 0; i < _display.Width; i++)
             {

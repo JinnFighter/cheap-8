@@ -2,22 +2,20 @@
 {
     internal class SkipSingleEqualInstruction : IInstruction
     {
-        private readonly RegistersContainer _container;
         private readonly byte _opcode;
         private readonly int _index;
 
-        public SkipSingleEqualInstruction(RegistersContainer container, byte opcode, int index)
+        public SkipSingleEqualInstruction(byte opcode, int index)
         {
-            _container = container;
             _opcode = opcode;
             _index = index;
         }
 
-        public void Execute()
+        public void Execute(Memory memory)
         {
-           if(_container.Vs[_index] == _opcode)
+           if(memory.Vs[_index] == _opcode)
            {
-                _container.IncreaseCounterAddress();
+                memory.IncreaseCounterAddress();
            }
         }
     }

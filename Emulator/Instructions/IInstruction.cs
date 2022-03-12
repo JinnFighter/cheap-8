@@ -2,6 +2,6 @@
 {
     internal interface IInstruction
     {
-        void Execute();
+        void Execute(Memory memory);
     }
 }

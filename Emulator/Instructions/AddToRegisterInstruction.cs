@@ -2,20 +2,18 @@
 {
     internal class AddToRegisterInstruction : IInstruction
     {
-        private readonly RegistersContainer _registersContainer;
         private readonly int _index;
         private readonly byte _registerValue;
 
-        public AddToRegisterInstruction(RegistersContainer registersContainer, int index, byte registerValue)
+        public AddToRegisterInstruction(int index, byte registerValue)
         {
-            _registersContainer = registersContainer;
             _index = index;
             _registerValue = registerValue;
         }
 
-        public void Execute()
+        public void Execute(Memory memory)
         {
-            _registersContainer.Vs[_index] += _registerValue;
+            memory.Vs[_index] += _registerValue;
         }
     }
 }

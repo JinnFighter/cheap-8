@@ -2,22 +2,20 @@
 {
     internal class SkipMultipleEqualInstruction : IInstruction
     {
-        private readonly RegistersContainer _container;
         private readonly int _xIndex;
         private readonly int _yIndex;
 
-        public SkipMultipleEqualInstruction(RegistersContainer container, int xIndex, int yIndex)
+        public SkipMultipleEqualInstruction(int xIndex, int yIndex)
         {
-            _container = container;
             _xIndex = xIndex;
             _yIndex = yIndex;
         }
 
-        public void Execute()
+        public void Execute(Memory memory)
         {
-            if (_container.Vs[_xIndex] == _container.Vs[_yIndex])
+            if (memory.Vs[_xIndex] == memory.Vs[_yIndex])
             {
-                _container.IncreaseCounterAddress();
+                memory.IncreaseCounterAddress();
             }
         }
     }
