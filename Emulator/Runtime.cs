@@ -39,8 +39,9 @@ namespace Emulator
         private ushort FetchInstruction()
         {
             Console.WriteLine("Fetch instruction");
+            var oldCounter = _registersContainter.GetProgramCounter();
             _registersContainter.IncreaseCounterAddress();
-            return _memory.GetInstruction(_registersContainter.GetProgramCounter());
+            return _memory.GetInstruction(oldCounter);
         }
 
         private void DecodeInstruction()
